@@ -1,0 +1,21 @@
+{
+  "_comment": "Coordinates are fractions of the screen (0.0-1.0), landscape. Edit, then rebuild.",
+  "toggle_mode_key": "GRAVE",
+  "look_hold_key": "NONE",
+  "joystick": {"x": 0.18, "y": 0.72, "radius": 0.09, "up": "W", "down": "S", "left": "A", "right": "D"},
+  "look": {"x": 0.65, "y": 0.45, "half_w": 0.25, "half_h": 0.30, "sens_x": 18, "sens_y": 18},
+  "mouse_left":  {"x": 0.88, "y": 0.62},
+  "mouse_right": {"x": 0.80, "y": 0.40},
+  "mouse_middle":{"x": 0.93, "y": 0.42},
+  "keys": [
+    {"key": "SPACE", "x": 0.92, "y": 0.80},
+    {"key": "C",     "x": 0.84, "y": 0.90},
+    {"key": "R",     "x": 0.76, "y": 0.86},
+    {"key": "F",     "x": 0.62, "y": 0.62},
+    {"key": "SHIFT", "x": 0.10, "y": 0.45},
+    {"key": "1",     "x": 0.40, "y": 0.92},
+    {"key": "2",     "x": 0.50, "y": 0.92},
+    {"key": "TAB",   "x": 0.05, "y": 0.10},
+    {"key": "ESC",   "x": 0.95, "y": 0.06}
+  ]
+}

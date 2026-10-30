@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" font-family="monospace" font-size="13">
+<rect width="1500" height="980" fill="white"/>
+<text x="20" y="30" font-size="20" font-weight="bold">kmtouch - USB mouse+keyboard to HID multitouch (RP2040) - schematic v1.0</text>
+<rect x="30" y="80" width="230" height="230" fill="#eef4ff" stroke="black" stroke-width="2" rx="6"/>
+<text x="145.0" y="100" text-anchor="middle" font-weight="bold">J1 USB-C receptacle (UFP)</text>
+<text x="36" y="122">VBUS (A4/A9/B4/B9)</text>
+<text x="36" y="140">CC1 (A5) -R1 5.1k- GND</text>
+<text x="36" y="158">CC2 (B5) -R2 5.1k- GND</text>
+<text x="36" y="176">D+ (A6/B6)</text>
+<text x="36" y="194">D- (A7/B7)</text>
+<text x="36" y="212">GND</text>
+<text x="36" y="230">SHIELD -1M||4.7nF- GND</text>
+<rect x="30" y="340" width="230" height="110" fill="#fff4e0" stroke="black" stroke-width="2" rx="6"/>
+<text x="145.0" y="360" text-anchor="middle" font-weight="bold">U4 USBLC6-2SC6 (ESD)</text>
+<text x="36" y="382">I/O1 = D+ , I/O2 = D-</text>
+<text x="36" y="400">VBUS pin = VBUS_IN</text>
+<text x="36" y="418">GND</text>
+<rect x="30" y="480" width="230" height="120" fill="#fff4e0" stroke="black" stroke-width="2" rx="6"/>
+<text x="145.0" y="500" text-anchor="middle" font-weight="bold">F1 PTC 0.5A (MF-MSMF050-2)</text>
+<text x="36" y="522">VBUS_IN -&gt; F1 -&gt; 5V_SYS</text>
+<text x="36" y="540">C: 10uF + 100nF on 5V_SYS</text>
+<rect x="30" y="630" width="230" height="150" fill="#fff4e0" stroke="black" stroke-width="2" rx="6"/>
+<text x="145.0" y="650" text-anchor="middle" font-weight="bold">U2 AP2112K-3.3 (LDO)</text>
+<text x="36" y="672">VIN, EN  &lt;- 5V_SYS</text>
+<text x="36" y="690">VOUT -&gt; 3V3 (600mA)</text>
+<text x="36" y="708">CIN 1uF, COUT 1uF</text>
+<text x="36" y="726">GND</text>
+<rect x="420" y="80" width="420" height="560" fill="#eef4ff" stroke="black" stroke-width="2" rx="6"/>
+<text x="630.0" y="100" text-anchor="middle" font-weight="bold">U1 RP2040 (QFN-56)</text>
+<text x="426" y="122">USB_DP (47) -R3 27R- J1.D+</text>
+<text x="426" y="140">USB_DM (46) -R4 27R- J1.D-</text>
+<text x="426" y="158"></text>
+<text x="426" y="176">XIN (20) / XOUT (21)</text>
+<text x="426" y="194">  Y1 12MHz ABM8-272-T3</text>
+<text x="426" y="212">  2x 15pF, 1k on XOUT</text>
+<text x="426" y="230">QSPI_SS/SD0-3/SCLK</text>
+<text x="426" y="248">  -&gt; U3 W25Q16JVUXIQ</text>
+<text x="426" y="266">  SS: 10k pull-up, BOOTSEL</text>
+<text x="426" y="284"></text>
+<text x="426" y="302">IOVDD/USB_VDD/ADC_VDD &lt;- 3V3</text>
+<text x="426" y="320">VREG_VIN &lt;- 3V3, VREG_VOUT-&gt;DVDD</text>
+<text x="426" y="338">  (1.1V, 1uF)</text>
+<text x="426" y="356">DVDD x2 100nF; 3V3 x8 100nF</text>
+<text x="426" y="374">RUN: 10k pull-up + RESET btn</text>
+<text x="426" y="392">TESTEN, GND pad -&gt; GND</text>
+<text x="834" y="122" text-anchor="end">GPIO2 -R5 22R- PIO_DP</text>
+<text x="834" y="140" text-anchor="end">GPIO3 -R6 22R- PIO_DM</text>
+<text x="834" y="158" text-anchor="end"></text>
+<text x="834" y="176" text-anchor="end">GPIO18 -&gt; U5.EN (VBUS_A_EN)</text>
+<text x="834" y="194" text-anchor="end">GPIO19 &lt;- U5.FLG (opt.)</text>
+<text x="834" y="212" text-anchor="end">GPIO25 -&gt; LED (330R)</text>
+<text x="834" y="230" text-anchor="end"></text>
+<text x="834" y="248" text-anchor="end">SWDIO/SWCLK -&gt; TP1/TP2</text>
+<text x="834" y="266" text-anchor="end"></text>
+<text x="834" y="284" text-anchor="end"></text>
+<text x="834" y="302" text-anchor="end">BOOTSEL btn:</text>
+<text x="834" y="320" text-anchor="end">QSPI_SS-1k-GND</text>
+<rect x="420" y="670" width="420" height="110" fill="#eef4ff" stroke="black" stroke-width="2" rx="6"/>
+<text x="630.0" y="690" text-anchor="middle" font-weight="bold">U3 W25Q16JVUXIQ 2MB QSPI flash</text>
+<text x="426" y="712">/CS=QSPI_SS  CLK=QSPI_SCLK</text>
+<text x="426" y="730">IO0..IO3 = QSPI_SD0..SD3</text>
+<text x="426" y="748">VCC=3V3 (100nF)</text>
+<rect x="960" y="80" width="300" height="330" fill="#eefff0" stroke="black" stroke-width="2" rx="6"/>
+<text x="1110.0" y="100" text-anchor="middle" font-weight="bold">U6 FE1.1s USB2.0 hub (SSOP-28)</text>
+<text x="966" y="122">USBDP0/DM0 &lt;- PIO_DP/DM</text>
+<text x="966" y="140">  (upstream, full-speed)</text>
+<text x="966" y="158">XIN/XOUT: Y2 12MHz +</text>
+<text x="966" y="176">  2x 20pF (per datasheet)</text>
+<text x="966" y="194">VDD5 &lt;- 5V_A, VD33 1uF</text>
+<text x="966" y="212">VD18 1uF</text>
+<text x="966" y="230">RESET: 10k/10uF RC</text>
+<text x="966" y="248">DP1/DM1 -&gt; J2</text>
+<text x="966" y="266">DP2/DM2 -&gt; J3</text>
+<text x="966" y="284">DP3,DP4 unused</text>
+<text x="966" y="302">PWRJ/OVCJ: tie per DS</text>
+<rect x="960" y="440" width="300" height="150" fill="#fff4e0" stroke="black" stroke-width="2" rx="6"/>
+<text x="1110.0" y="460" text-anchor="middle" font-weight="bold">U5 TPS2051C / AP2553 (load sw)</text>
+<text x="966" y="482">IN &lt;- 5V_SYS</text>
+<text x="966" y="500">EN &lt;- GPIO18</text>
+<text x="966" y="518">OUT -&gt; 5V_A (500mA lim.)</text>
+<text x="966" y="536">FLG -&gt; GPIO19 (10k PU)</text>
+<text x="966" y="554">COUT 47uF on 5V_A</text>
+<rect x="1300" y="80" width="180" height="150" fill="#f4eeff" stroke="black" stroke-width="2" rx="6"/>
+<text x="1390.0" y="100" text-anchor="middle" font-weight="bold">J2 USB-A (mouse)</text>
+<text x="1306" y="122">1 VBUS &lt;- 5V_A</text>
+<text x="1306" y="140">2 D- &lt;- U6.DM1</text>
+<text x="1306" y="158">3 D+ &lt;- U6.DP1</text>
+<text x="1306" y="176">4 GND</text>
+<rect x="1300" y="260" width="180" height="150" fill="#f4eeff" stroke="black" stroke-width="2" rx="6"/>
+<text x="1390.0" y="280" text-anchor="middle" font-weight="bold">J3 USB-A (keyb.)</text>
+<text x="1306" y="302">1 VBUS &lt;- 5V_A</text>
+<text x="1306" y="320">2 D- &lt;- U6.DM2</text>
+<text x="1306" y="338">3 D+ &lt;- U6.DP2</text>
+<text x="1306" y="356">4 GND</text>
+<rect x="1300" y="440" width="180" height="150" fill="#fff4e0" stroke="black" stroke-width="2" rx="6"/>
+<text x="1390.0" y="460" text-anchor="middle" font-weight="bold">U7,U8 USBLC6</text>
+<text x="1306" y="482">one per USB-A</text>
+<text x="1306" y="500">on D+/D-</text>
+<text x="1306" y="518">and 5V_A</text>
+<polyline points="260,190 420,190" fill="none" stroke="#0040c0" stroke-width="2"/>
+<text x="264" y="185" fill="#0040c0" font-size="12">D+/D- (via R3/R4 27R)</text>
+<polyline points="260,520 330,520 330,600" fill="none" stroke="#c00000" stroke-width="2"/>
+<text x="264" y="515" fill="#c00000" font-size="12">5V_SYS</text>
+<polyline points="260,140 300,140 300,520" fill="none" stroke="#c00000" stroke-width="2"/>
+<text x="264" y="135" fill="#c00000" font-size="12">VBUS_IN</text>
+<polyline points="260,700 420,700" fill="none" stroke="#c00000" stroke-width="2"/>
+<text x="264" y="695" fill="#c00000" font-size="12">3V3</text>
+<polyline points="840,120 960,120" fill="none" stroke="#0040c0" stroke-width="2"/>
+<text x="844" y="115" fill="#0040c0" font-size="12">PIO_DP/PIO_DM</text>
+<polyline points="840,390 900,390 900,480 960,480" fill="none" stroke="#006000" stroke-width="2"/>
+<text x="844" y="385" fill="#006000" font-size="12">VBUS_A_EN</text>
+<polyline points="1260,520 1280,520 1280,120 1300,120" fill="none" stroke="#c00000" stroke-width="2"/>
+<text x="1264" y="515" fill="#c00000" font-size="12">5V_A</text>
+<polyline points="1260,250 1300,250" fill="none" stroke="#0040c0" stroke-width="2"/>
+<text x="1264" y="245" fill="#0040c0" font-size="12">DP1/DM1, DP2/DM2</text>
+<text x="20" y="830" font-size="14">Notes: Phone is USB host and powers everything via J1 VBUS (5V). CC1/CC2 5.1k to GND = UFP (sink), so phone turns on VBUS.</text>
+<text x="20" y="852" font-size="14">PIO-USB host runs on GPIO2/3 (D-=D+ +1, required). One PIO-USB root port -> FE1.1s hub -> 2x USB-A, so TinyUSB can enumerate both devices.</text>
+<text x="20" y="874" font-size="14">Alt (no hub): 2nd PIO-USB root port on GPIO4/5 via pio_usb_host_add_port() - needs custom host code (not TinyUSB), see README.</text>
+<text x="20" y="896" font-size="14">Budget: RP2040+hub ~50mA, mouse+kbd ~100-200mA. Many phones limit OTG to 500mA. LED/RGB keyboards may exceed it.</text>
+<text x="20" y="918" font-size="14">Reference: RP2040 "Hardware design with RP2040" minimal design; Adafruit Feather RP2040 USB Host; jfedor2/hid-remapper.</text>
+</svg>

@@ -1,0 +1,17 @@
+deps/
+firmware/build*/
+build*/
+__pycache__/
+*.pyc
+hardware/kicad/gen/*.dsn
+hardware/kicad/gen/*.ses
+hardware/kicad/gen/*.log
+hardware/kicad/gen/logs/
+hardware/kicad/gen/unrouted.kicad_pcb
+hardware/kicad/gen/routed_raw.kicad_pcb
+hardware/kicad/*-backups/
+hardware/kicad/*.lck
+hardware/kicad/fp-info-cache
+hardware/kicad/out/gerbers/
+hardware/kicad/out/pos_raw.csv
+*.kicad_prl
